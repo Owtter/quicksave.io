@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+*,
+*:before,
+*:after{
+    font-family: 'Poppins', sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* general templates for elements */
+body{
+
+}
+
+a,
+a:visited{
+    text-decoration:none;
+    color:#000;
+}
+
+li{
+    list-style:none;
+}
+
+
+/* start nav bar */
+nav{
+    /* display all nav elements next to each other */
+    display:flex;
+    /* space out elements */
+    justify-content:space-between;
+    /* align elements centered vertically */
+    align-items:center;
+
+    width:100%;
+    padding:10px;
+    font-size:19px;
+    font-weight:600;
+    box-shadow: 4px 3px 8px 1px #969696;
+}
+
+.logo img{
+    width:225px;
+    height:auto;
+    max-width:100%;
+    margin:0 0 -8px 60px;
+}
+
+nav ul{
+    display:flex;
+}
+
+nav li{
+    margin:0 60px 0 0;
+    border:0;
+}
+
+/* Sidebar pullout arrow */
+.floating-button{
+
+}
+
+.floating-button img{
+    width:90px;
+    height:auto;
+    padding:5px 5px 0 40px;;
+}
+
+.floating-button button{
+    top:50%;
+    margin:0 0 0 -35px;
+    background-color:rgba(238, 238, 221, 1);
+    position:fixed;
+    border-radius:100px;
+}
+
+.floating-button button:hover{
+    background-color:rgba(238, 238, 221, 0.6);
+}
+
+.vertical{
+    border-left:12px solid #eeeedd;
+    height:100%;
+    position:fixed;
+}
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width:15px;
+}
+
+::-webkit-scrollbar-track{
+    background:#eeeedd;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#000;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:grey;
+}
