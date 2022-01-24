@@ -11,7 +11,9 @@
 
 /* general templates for elements */
 body{
-
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
 }
 
 a,
@@ -20,8 +22,16 @@ a:visited{
     color:#000;
 }
 
+a:hover{
+    color:#43464B;
+}
+
 li{
     list-style:none;
+}
+
+button{
+    border:none;
 }
 
 
@@ -39,6 +49,9 @@ nav{
     font-size:19px;
     font-weight:600;
     box-shadow: 4px 3px 8px 1px #969696;
+    background-color:#fff;
+    z-index:1;
+    position:fixed;
 }
 
 .logo img{
@@ -58,32 +71,87 @@ nav li{
 }
 
 /* Sidebar pullout arrow */
-.floating-button{
-
-}
-
-.floating-button img{
-    width:90px;
-    height:auto;
-    padding:5px 5px 0 40px;;
-}
-
-.floating-button button{
-    top:50%;
-    margin:0 0 0 -35px;
-    background-color:rgba(238, 238, 221, 1);
+.sidebar{
+    padding:60px 0 0 0;
     position:fixed;
-    border-radius:100px;
-}
-
-.floating-button button:hover{
-    background-color:rgba(238, 238, 221, 0.6);
-}
-
-.vertical{
-    border-left:12px solid #eeeedd;
+    left:0;
+    width:250px;
     height:100%;
-    position:fixed;
+    background:#eeeedd;
+    left:-250px;
+}
+
+.sidebar-items{
+    display:block;
+    height:100%;
+    width:100%;
+    line-height:80px;
+    font-size:20py;
+    padding: 0 0 0 20px;
+    box-sizing:border-box;
+}
+
+.sidebar ul li:hover a{
+    transition:0.4s;
+    padding-left:10px;
+}
+
+.sidebar button{
+    cursor:pointer;
+}
+
+.sidebar img{
+    width:30px;
+    height:auto;
+}
+
+.sidebar label{
+    padding:40px 0;
+    position:absolute;
+    top:50%;
+    border-radius:0 10px 10px 0;
+    background-color:#0055aa;
+    left:250px;
+}
+
+sidebar img:hover{
+    cursor:pointer;
+}
+
+.sidebar input{
+    display:none;
+}
+
+#box:checked + label{
+
+}
+
+/* footer */
+footer{
+    background-color:#eeeedd;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top: auto;
+    color:#1F2022;
+    z-index:1;
+    font-size:18px;
+}
+
+footer a{
+    color:#626569 !important;
+}
+
+footer a:hover{
+    color:#1F2022 !important;
+}
+
+.explore{
+    margin:25px 0 25px 15%;
+}
+
+.help{
+    margin:25px 15% 25px 0;
 }
 
 /* custom scroll bar */
@@ -96,9 +164,10 @@ nav li{
 }
 
 ::-webkit-scrollbar-thumb{
-    background:#000;
+    background:rgba(0, 85, 170, 1);
+    border-radius: 0.4rem;
 }
 
 ::-webkit-scrollbar-thumb:hover{
-    background:grey;
+    background:rgba(0, 85, 170, 0.8);
 }

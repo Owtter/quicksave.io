@@ -24,15 +24,49 @@
       </ul>
     </nav>
 
-    <div class="floating-button">
-      <div class="vertical"></div>
-      <button><img src="{{ url_for('static', filename='img/arrow.png') }}" alt=">>"></button>
-    </div>
+    <aside class="sidebar">
+      <input type="checkbox" id="box">
+         <label for="box">
+           <img src="{{ url_for('static', filename='img/right-arrow_white.png') }}" alt=">">
+         </label>
+      <div class="sidebar-items">
+        <ul>
+          <li><a href="#">My Files</a></li>
+          <li><a href="#">Linked Devices</a></li>
+          <li><a href="#">Recent</a></li>
+          <li><a href="#">Favorites</a></li>
+        </ul>
+        <div class="storage">
+          <p>Available storage:</p>
+        </div>
+      </div>
+    </aside>
 
     <main>
 
       {% block main %}{% endblock main %}
     </main>
+
+    <footer>
+      <div class="explore">
+        Explore:
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </div>
+      <div class="copyright">
+        <!--TODO: make year dynamic-->
+        <p>&copy 2022 Quicksave.io</p>
+      </div>
+      <div class="help">
+        Need help?
+        <ul>
+          <li><a href="/">Contact</a></li>
+          <li><a href="/">Q&A</a></li>
+        </ul>
+      </div>
+    </footer>
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
