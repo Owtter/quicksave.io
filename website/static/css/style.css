@@ -66,11 +66,86 @@ nav ul{
 }
 
 nav li{
-    margin:0 60px 0 0;
+    margin-right:60px;
     border:0;
 }
 
-/* Sidebar pullout arrow */
+/* slide-out side bar */
+.Sidebar ::-webkit-scrollbar{
+    display:none;
+}
+
+.Sidenav{
+    height:100%;
+    width:0;
+    position:fixed;
+    z-index:1;
+    top:0;
+    left:0;
+    overflow:hidden;
+    transition:.5s;
+    padding-top:60px;
+    background-color:#eeeedd;
+}
+
+.Sidenav ul{
+    display:block;
+    height:100%;
+    width:100%;
+    line-height:80px;
+    font-size:16px;
+    padding:0 20px;
+    box-sizing:border-box;
+}
+
+.OpenBtn{
+    position:fixed;
+    top:50%;
+    font-size:30px;
+    cursor:pointer;
+    padding:50px 0 40px 0;
+    border-radius:0 10px 10px 0;
+    background-color:#0055aa;
+}
+
+.OpenBtn img{
+    width:30px;
+    height:auto;
+}
+
+.CloseBtn{
+    display:none;
+    position:fixed;
+    top:23%;
+    font-size:30px;
+    cursor:pointer;
+    padding:50px 0 40px 0;
+    border-radius:10px 0 0 10px;
+    background-color:#0055aa;
+    margin:250px;
+    transform:rotate(180deg);
+}
+
+.CloseBtn img{
+    width:30px;
+    height:auto;
+}
+
+/*
+.closeBtn{
+    position:absolute;
+    top:0;
+    right:25px;
+    font-size:35px;
+    margin-left:50px;
+    cursor:pointer;
+}
+*/
+.DropdownContent{
+    display:none;
+}
+
+/* Sidebar pullout arrow
 .sidebar{
     padding:60px 0 0 0;
     position:fixed;
@@ -125,6 +200,7 @@ sidebar img:hover{
 #box:checked + label{
 
 }
+*/
 
 /* footer */
 footer{

@@ -15,7 +15,9 @@
   <!-- uniform navigation bar  -->
     <nav>
       <div class="logo">
-        <a href="/"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="Quicksave.io"></a>
+        <a href="/">
+          <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Quicksave.io">
+        </a>
       </div>
       <ul>
         <li><a href="/">Home</a></li>
@@ -23,7 +25,39 @@
         <li><a href="/">Contact</a></li>
       </ul>
     </nav>
-
+  <!-- slide-out side nav -->
+    <div class="Sidebar">
+      <div id="mySidenav" class="Sidenav">
+        <ul>
+          <div class="MyFilesDropdown">
+            <li> <a href="#" class="DropBtn" onclick="openMyFilesDropdown">My Files</a></li>
+            <div id="myFilesDropdownContent" class="DropdownContent">
+              <ul>
+                <li><a href="#">Personal</a></li>
+                <li><a href="#">Family</a></li>
+                <li><a href="#">Photo</a></li>
+              </ul>
+            </div>
+          </div> 
+          <li><a href="#">Devices</a></li>
+          <li><a href="#">Recent</a></li>
+          <li><a href="#">Favorites</a></li>
+          <div class="storage">
+            <p>Available storage:</p>
+            <hr>
+            <p>240 GB of 500 GB used</p>
+          </div>
+          <li><a href="#">Settings</a></li>
+        </ul>
+        <button id="closeBtn" class="CloseBtn" onclick="closeNav()">
+          <img src="{{ url_for('static', filename='img/right-arrow_white.png') }}" alt="<">
+        </button>
+      </div>
+      <button class="OpenBtn" onclick="openNav()">
+        <img src="{{ url_for('static', filename='img/right-arrow_white.png') }}" alt=">">
+      </button>
+    </div>
+    <!--
     <aside class="sidebar">
       <input type="checkbox" id="box">
          <label for="box">
@@ -41,12 +75,14 @@
         </div>
       </div>
     </aside>
+    -->
 
+    <!-- main section of webpage -->
     <main>
-
       {% block main %}{% endblock main %}
     </main>
 
+    <!-- footer -->
     <footer>
       <div class="explore">
         Explore:
@@ -68,8 +104,6 @@
       </div>
     </footer>
 
-    <!-- Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!-- Custom JS -->
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
   </body>
