@@ -8,95 +8,54 @@
     
     <!-- Custom CSS-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 
     <title>{% block title %}{% endblock title %}</title>
   </head>
   <body>
-  <!-- uniform navigation bar  -->
-    <nav>
+    <header>
       <div class="logo">
-        <a href="/">
-          <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Quicksave.io">
-        </a>
+        <img src="{{ url_for('static', filename='img/logo_q_inverted.png') }}" alt="Q">
+        <h1>Quicksave</h1>
       </div>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/">Contact</a></li>
-      </ul>
-    </nav>
-  <!-- slide-out side nav -->
-    <div class="Sidebar">
-      <div id="mySidenav" class="Sidenav">
-        <ul>
-          <div class="MyFilesDropdown">
-            <li> <a href="#" class="DropBtn" onclick="openMyFilesDropdown">My Files</a></li>
-            <div id="myFilesDropdownContent" class="DropdownContent">
-              <ul>
-                <li><a href="#">Personal</a></li>
-                <li><a href="#">Family</a></li>
-                <li><a href="#">Photo</a></li>
-              </ul>
-            </div>
-          </div> 
-          <li><a href="#">Devices</a></li>
-          <li><a href="#">Recent</a></li>
-          <li><a href="#">Favorites</a></li>
-          <div class="storage">
-            <p>Available storage:</p>
-            <hr>
-            <p>240 GB of 500 GB used</p>
-          </div>
-          <li><a href="#">Settings</a></li>
+      <nav>
+        <ul class="ul__nav">
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
-        <button id="closeBtn" class="CloseBtn" onclick="closeNav()">
-          <img src="{{ url_for('static', filename='img/right-arrow_white.png') }}" alt="<">
+      </nav>
+    </header>
+
+    <!-- main contents of webpage -->
+    <main>
+      <!-- slide-out Sidebar -->
+      <div class="sidebar" id="sidebar">
+        <ul>
+          <li>Devices</li>
+          <li>Favorites</li>
+          <li>Recent</li>
+        </ul>
+        <button class="sidebar__button" onclick="toggleSidebar()">
+          <img src="{{ url_for('static', filename='img/right-arrow_white.png') }}" alt=">">
         </button>
       </div>
-      <button class="OpenBtn" onclick="openNav()">
-        <img src="{{ url_for('static', filename='img/right-arrow_white.png') }}" alt=">">
-      </button>
-    </div>
-    <!--
-    <aside class="sidebar">
-      <input type="checkbox" id="box">
-         <label for="box">
-           <img src="{{ url_for('static', filename='img/right-arrow_white.png') }}" alt=">">
-         </label>
-      <div class="sidebar-items">
-        <ul>
-          <li><a href="#">My Files</a></li>
-          <li><a href="#">Linked Devices</a></li>
-          <li><a href="#">Recent</a></li>
-          <li><a href="#">Favorites</a></li>
-        </ul>
-        <div class="storage">
-          <p>Available storage:</p>
-        </div>
-      </div>
-    </aside>
-    -->
-
-    <!-- main section of webpage -->
-    <main>
       {% block main %}{% endblock main %}
     </main>
 
-    <!-- footer -->
     <footer>
-      <div class="explore">
-        Explore:
+      <div class="footer-segment">
+        <h4>Explore:</h4>
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="/about">About</a></li>
         </ul>
       </div>
-      <div class="copyright">
         <!--TODO: make year dynamic-->
-        <p>&copy 2022 Quicksave.io</p>
-      </div>
-      <div class="help">
-        Need help?
+        <h4>&copy <span id="copyright-year"></span> Quicksave.io</h4>
+      <div class="footer-segment">
+        <h4>Need help?</h4>
         <ul>
           <li><a href="/">Contact</a></li>
           <li><a href="/">Q&A</a></li>
@@ -104,7 +63,7 @@
       </div>
     </footer>
 
-    <!-- Custom JS -->
+    <!-- custom js -->
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
   </body>
 </html>

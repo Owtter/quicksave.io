@@ -3,79 +3,60 @@
 *,
 *:before,
 *:after{
-    font-family: 'Poppins', sans-serif;
+    font-family:'Poppins',sans-serif;
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-/* general templates for elements */
-body{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
+h1{
+    font-size:36px;
 }
 
-a,
-a:visited{
-    text-decoration:none;
-    color:#000;
-}
-
-a:hover{
-    color:#43464B;
-}
-
-li{
+ul, li{
     list-style:none;
 }
 
-button{
-    border:none;
+a, a:visited{
+    font-size:18px;
+    text-decoration:none;
+    color:#707070;
 }
 
-
-/* start nav bar */
-nav{
-    /* display all nav elements next to each other */
+/* Header */
+header{
+    position:sticky;
     display:flex;
-    /* space out elements */
-    justify-content:space-between;
-    /* align elements centered vertically */
+    justify-content:space-around;
     align-items:center;
+    height:5em;
+    box-shadow:4px 3px 8px 1px grey;
+}
 
-    width:100%;
-    padding:10px;
-    font-size:19px;
-    font-weight:600;
-    box-shadow: 4px 3px 8px 1px #969696;
-    background-color:#fff;
-    z-index:1;
-    position:fixed;
+.logo{
+    width:16em;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
 .logo img{
-    width:225px;
-    height:auto;
-    max-width:100%;
-    margin:0 0 -8px 60px;
+    width:60px;
+    height:60px;
 }
 
-nav ul{
+nav{
+    width:20em;
+    justify-content:space-between;
+}
+
+.ul__nav{
+    justify-content:space-between;
     display:flex;
 }
 
-nav li{
-    margin-right:60px;
-    border:0;
-}
-
-/* slide-out side bar */
-.Sidebar ::-webkit-scrollbar{
-    display:none;
-}
-
-.Sidenav{
+/* slide-out sidebar */
+.sidebar{
     height:100%;
     width:0;
     position:fixed;
@@ -88,19 +69,9 @@ nav li{
     background-color:#eeeedd;
 }
 
-.Sidenav ul{
-    display:block;
-    height:100%;
-    width:100%;
-    line-height:80px;
-    font-size:16px;
-    padding:0 20px;
-    box-sizing:border-box;
-}
-
-.OpenBtn{
+.sidebar__button{
     position:fixed;
-    top:50%;
+    top:40%;
     font-size:30px;
     cursor:pointer;
     padding:50px 0 40px 0;
@@ -108,142 +79,22 @@ nav li{
     background-color:#0055aa;
 }
 
-.OpenBtn img{
+.sidebar__button img{
     width:30px;
     height:auto;
 }
 
-.CloseBtn{
-    display:none;
-    position:fixed;
-    top:23%;
-    font-size:30px;
-    cursor:pointer;
-    padding:50px 0 40px 0;
-    border-radius:10px 0 0 10px;
-    background-color:#0055aa;
-    margin:250px;
-    transform:rotate(180deg);
-}
-
-.CloseBtn img{
-    width:30px;
-    height:auto;
-}
-
-/*
-.closeBtn{
-    position:absolute;
-    top:0;
-    right:25px;
-    font-size:35px;
-    margin-left:50px;
-    cursor:pointer;
-}
-*/
-.DropdownContent{
-    display:none;
-}
-
-/* Sidebar pullout arrow
-.sidebar{
-    padding:60px 0 0 0;
-    position:fixed;
-    left:0;
-    width:250px;
-    height:100%;
-    background:#eeeedd;
-    left:-250px;
-}
-
-.sidebar-items{
-    display:block;
-    height:100%;
-    width:100%;
-    line-height:80px;
-    font-size:20py;
-    padding: 0 0 0 20px;
-    box-sizing:border-box;
-}
-
-.sidebar ul li:hover a{
-    transition:0.4s;
-    padding-left:10px;
-}
-
-.sidebar button{
-    cursor:pointer;
-}
-
-.sidebar img{
-    width:30px;
-    height:auto;
-}
-
-.sidebar label{
-    padding:40px 0;
-    position:absolute;
-    top:50%;
-    border-radius:0 10px 10px 0;
-    background-color:#0055aa;
-    left:250px;
-}
-
-sidebar img:hover{
-    cursor:pointer;
-}
-
-.sidebar input{
-    display:none;
-}
-
-#box:checked + label{
-
-}
-*/
-
-/* footer */
 footer{
-    background-color:#eeeedd;
     display:flex;
-    justify-content:space-between;
+    justify-content:space-around;
     align-items:center;
-    margin-top: auto;
-    color:#1F2022;
-    z-index:1;
-    font-size:18px;
+    position:fixed;
+    bottom:0;
+    width:100%;
+    box-shadow:2px 1px 5px 1px grey;
+    height:8em;
 }
 
-footer a{
-    color:#626569 !important;
-}
-
-footer a:hover{
-    color:#1F2022 !important;
-}
-
-.explore{
-    margin:25px 0 25px 15%;
-}
-
-.help{
-    margin:25px 15% 25px 0;
-}
-
-/* custom scroll bar */
-::-webkit-scrollbar {
-    width:15px;
-}
-
-::-webkit-scrollbar-track{
-    background:#eeeedd;
-}
-
-::-webkit-scrollbar-thumb{
-    background:rgba(0, 85, 170, 1);
-    border-radius: 0.4rem;
-}
-
-::-webkit-scrollbar-thumb:hover{
-    background:rgba(0, 85, 170, 0.8);
+footer span{
+    padding-bottom:2em;
 }

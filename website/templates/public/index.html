@@ -4,15 +4,11 @@
 
 {% block main %}
 
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium atque, cumque deleniti doloribus ducimus exercitationem expedita fugiat incidunt nam natus, nostrum nulla numquam officia provident quos rerum sequi tempore voluptates.</h1>
-            <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab beatae consectetur cumque dolorum, eius enim excepturi facere id iste itaque laboriosam optio pariatur praesentium quo sint tenetur veritatis? Commodi, quos!</h1>
-            <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium atque, cumque deleniti doloribus ducimus exercitationem expedita fugiat incidunt nam natus, nostrum nulla numquam officia provident quos rerum sequi tempore voluptates.</h1>
-            <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab beatae consectetur cumque dolorum, eius enim excepturi facere id iste itaque laboriosam optio pariatur praesentium quo sint tenetur veritatis? Commodi, quos!</h1>
-        </div>
-    </div>
+<div class="drop-zone">
+    <img src="{{ url_for('static', filename='img/icon_upload.png') }}" alt="Upload">
+    <span>Drag & Drop or Click to Upload</span>
+    <div class="drop-zone__thumb" data-label="myfile.txt"></div>
+    <input type="file" name="myFile" class="drop-zone__input">
 </div>
 
 {% endblock main %}
