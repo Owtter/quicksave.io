@@ -3,17 +3,20 @@
 # Any page that isn't authentication    #
 # related that users can navigate to.   #
 # ------------------------------------- #
-from flask import Blueprint
-from flask import render_template
+import os
+from flask import Blueprint, render_template
+from website import save_file, UploadFileForm
 
 # define views file as blueprint (root)
 views = Blueprint("views", __name__)
 
 
 # create home page route (url)
-@views.route("/")
+@views.route("/", methods=["GET", "POST"])
 def index():
-    return render_template("public/index.html")
+    save_file()
+
+    return render_template("public/index.html", form=UploadFileForm())
 
 
 @views.route("/about")

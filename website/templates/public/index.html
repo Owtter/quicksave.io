@@ -7,8 +7,13 @@
 <div class="drop-zone">
     <img src="{{ url_for('static', filename='img/icon_upload.png') }}" alt="Upload">
     <span>Drag & Drop or Click to Upload</span>
-    <div class="drop-zone__thumb" data-label="myfile.txt"></div>
-    <input type="file" name="myFile" class="drop-zone__input">
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div class="upload-file">{{ form.file() }}</div>
+        <div class="upload-button">{{ form.submit() }}</div>
+    </form>
+    {{ upload_complete }}
+
 </div>
 
 {% endblock main %}

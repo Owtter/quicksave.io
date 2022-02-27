@@ -1,4 +1,5 @@
 from flask import Blueprint
+from flask import render_template
 
 # define auth file as blueprint (root) for authentication pages
 auth = Blueprint("auth", __name__)
