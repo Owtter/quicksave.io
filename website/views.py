@@ -19,6 +19,12 @@ def index():
     return render_template("public/index.html", form=UploadFileForm())
 
 
+@views.errorhandler(413)
+def too_large(e):
+    return "File is too large", 413
+
+
 @views.route("/about")
 def about():
     return"<h1 style='color:blue;'><strong>About Quicksave.io</strong></h1>"
+
